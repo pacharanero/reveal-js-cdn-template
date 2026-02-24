@@ -25,6 +25,10 @@ https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reveal.css
 - `s/pdf` exports `slides.pdf` using DeckTape.
   - Requires Docker to be installed and runnable as a non-root user.
 
+## Agent guide
+
+`AGENTS.md` documents a step-by-step workflow for creating a new presentation from this template, including the questions an agent should ask and the exact edits to make.
+
 ## Notes
 
 - Speaker notes are included in `index.html`. Press `S` to open the speaker view.
