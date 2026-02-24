@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>Reveal.js CDN Template</title>
+
+    <!--
+      CDN usage:
+      - Pin a version by inserting @x.y.z after reveal.js
+      - Example: https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reveal.css
+    -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reset.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/black.css"
+      id="theme"
+    />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js/plugin/highlight/monokai.css"
+      id="highlight-theme"
+    />
+
+    <style>
+      .kicker {
+        font-size: 0.6em;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        opacity: 0.7;
+      }
+
+      .panel {
+        padding: 0.7em 1em;
+        border: 2px solid rgba(255, 255, 255, 0.25);
+        border-radius: 14px;
+        background: rgba(0, 0, 0, 0.2);
+      }
+
+      .auto-flow {
+        display: flex;
+        gap: 1em;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .auto-flow.stacked {
+        flex-direction: column;
+      }
+
+      .small {
+        font-size: 0.8em;
+      }
+
+      .muted {
+        opacity: 0.7;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section
+          data-markdown
+          data-separator="-----"
+          data-separator-vertical="---"
+          data-separator-notes="^Note:"
+        >
+          <textarea data-template>
+# Reveal.js CDN Template
+
+### A single-file starter deck
+
+<p class="kicker">Press <strong>S</strong> for speaker notes, <strong>?</strong> for help</p>
+
+Note: Speaker notes go here. They are visible in the speaker view.
+
+-----
+## What this template shows
+
+- Markdown slides and separators <!-- .element: class="fragment" -->
+- Fragments and fragment ordering <!-- .element: class="fragment" -->
+- Backgrounds and transitions <!-- .element: class="fragment" -->
+- Auto-animate and layout helpers <!-- .element: class="fragment" -->
+- Code highlighting and tables <!-- .element: class="fragment" -->
+
+-----
+<!-- .slide: data-background-gradient="linear-gradient(135deg, #0ea5e9, #f97316)" data-transition="zoom" -->
+## Slide attributes in Markdown
+
+Use an HTML comment to set slide attributes:
+
+```html
+<!-- .slide: data-background-gradient="linear-gradient(135deg, #0ea5e9, #f97316)" data-transition="zoom" -->
+```
+
+Note: This slide sets a background gradient and a custom transition.
+
+-----
+## Fragments with order
+
+- First point <!-- .element: class="fragment" data-fragment-index="1" -->
+- Second point <!-- .element: class="fragment" data-fragment-index="2" -->
+- Emphasized point <!-- .element: class="fragment highlight-current-red" data-fragment-index="3" -->
+- Final point <!-- .element: class="fragment" data-fragment-index="4" -->
+
+-----
+<!-- .slide: data-auto-animate -->
+## Auto-animate
+
+<div class="auto-flow" data-id="flow">
+  <div class="panel" data-id="card-a">Draft</div>
+  <div class="panel" data-id="card-b">Review</div>
+  <div class="panel" data-id="card-c">Ship</div>
+</div>
+
+---
+<!-- .slide: data-auto-animate -->
+## Auto-animate
+
+<div class="auto-flow stacked" data-id="flow">
+  <div class="panel" data-id="card-a" style="width: 60%;">Draft</div>
+  <div class="panel" data-id="card-b" style="width: 60%;">Review</div>
+  <div class="panel" data-id="card-c" style="width: 60%;">Ship</div>
+</div>
+
+-----
+## Vertical slides
+
+Use `---` to create vertical stacks under a single topic.
+
+---
+### Vertical slide A
+
+- Part 1 <!-- .element: class="fragment" -->
+- Part 2 <!-- .element: class="fragment" -->
+
+---
+### Vertical slide B
+
+A good place for examples or a mini-deep dive.
+
+-----
+## Code highlighting
+
+```js
+import Reveal from "reveal.js";
+import RevealMarkdown from "reveal.js/plugin/markdown/markdown.esm.js";
+
+Reveal.initialize({
+  hash: true,
+  plugins: [RevealMarkdown]
+});
+```
+
+-----
+## Tables and layout helpers
+
+<div class="r-hstack" style="gap: 1.2em; align-items: flex-start;">
+  <table>
+    <thead>
+      <tr>
+        <th>Stage</th>
+        <th>Goal</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Draft</td>
+        <td>Clarify</td>
+      </tr>
+      <tr>
+        <td>Review</td>
+        <td>Refine</td>
+      </tr>
+      <tr>
+        <td>Ship</td>
+        <td>Share</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="panel small">
+    <p class="muted">Built-in layout helpers:</p>
+    <p><code>r-hstack</code>, <code>r-vstack</code>, <code>r-stack</code>, <code>r-fit-text</code></p>
+    <p class="muted">Custom CSS classes are fine too.</p>
+  </div>
+</div>
+
+-----
+<!-- .slide: data-background-color="#111827" -->
+## Background color
+
+Set a solid background color with:
+
+```html
+<section data-background-color="#111827">...</section>
+```
+
+-----
+## Speaker notes
+
+Press <strong>S</strong> to open speaker view.
+
+Note: You can put cue words, timings, or links here.
+
+-----
+## Quick start checklist
+
+1. Replace title, subtitle, and author
+2. Delete the demo slides you do not need
+3. Keep the CDN links (or pin a version)
+4. Add your content in Markdown
+
+-----
+## Local helper scripts
+
+- `s/serve` runs a local web server (uses `live-server`, installs it if missing)
+- `s/pdf` exports `slides.pdf` via DeckTape (requires Docker)
+
+-----
+## Updating Reveal.js
+
+Pin a CDN version by adding `@x.y.z` to the URLs, for example:
+
+```
+https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reveal.css
+```
+
+To update, change the version number.
+
+-----
+## Resources
+
+- revealjs.com
+- github.com/hakimel/reveal.js
+
+          </textarea>
+        </section>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/highlight/highlight.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/zoom/zoom.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+        slideNumber: true,
+        transition: "slide",
+        backgroundTransition: "fade",
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealZoom],
+      });
+    </script>
+  </body>
+</html>
