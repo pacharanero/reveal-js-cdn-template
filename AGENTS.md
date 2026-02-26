@@ -53,3 +53,29 @@ cp -R revealjs-cdn-template 2026-my-talk-title
 - `<title>Reveal.js CDN Template</title>`
 - `# Reveal.js CDN Template`
 - `### A single-file starter deck`
+
+## Offline conversion command
+
+Use this command phrase when a human wants a fully offline deck:
+
+`convert this presentation to offline reveal.js mode`
+
+When this command is given, do the following in the target presentation repo:
+
+1. Add Reveal.js as a local git submodule:
+   - `git submodule add https://github.com/hakimel/reveal.js.git reveal.js`
+2. Replace CDN links in `index.html` with local paths:
+   - `https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css` -> `reveal.js/dist/reveal.css`
+   - `https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/<theme>.css` -> `reveal.js/dist/theme/<theme>.css`
+   - `https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js` -> `reveal.js/dist/reveal.js`
+   - `https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js` -> `reveal.js/plugin/markdown/markdown.js`
+   - `https://cdn.jsdelivr.net/npm/reveal.js/plugin/highlight/highlight.js` -> `reveal.js/plugin/highlight/highlight.js`
+   - `https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js` -> `reveal.js/plugin/notes/notes.js`
+3. Keep `Reveal.initialize({ hash: true, ... })` and existing plugin config.
+4. Keep `s/serve` and `s/pdf` scripts; they should continue to work with local assets.
+5. Update `README.md` to state the deck now uses local Reveal.js via submodule for offline presenting.
+6. Verify by disconnecting network (or simulating offline) and confirming slides load with styles and navigation intact.
+
+Notes:
+- Do not remove markdown separators or presentation content during this conversion.
+- If the repository already has a `reveal.js` submodule, reuse it and only fix references as needed.
