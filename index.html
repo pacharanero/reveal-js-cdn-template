@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <meta charset="utf-8" />
@@ -14,11 +14,17 @@
       - Pin a version by inserting @x.y.z after reveal.js
       - Example: https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reveal.css
     -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reset.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css" />
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/black.css"
+      href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reset.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/solarized.css"
       id="theme"
     />
 
@@ -29,40 +35,8 @@
       id="highlight-theme"
     />
 
-    <style>
-      .kicker {
-        font-size: 0.6em;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        opacity: 0.7;
-      }
-
-      .panel {
-        padding: 0.7em 1em;
-        border: 2px solid rgba(255, 255, 255, 0.25);
-        border-radius: 14px;
-        background: rgba(0, 0, 0, 0.2);
-      }
-
-      .auto-flow {
-        display: flex;
-        gap: 1em;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .auto-flow.stacked {
-        flex-direction: column;
-      }
-
-      .small {
-        font-size: 0.8em;
-      }
-
-      .muted {
-        opacity: 0.7;
-      }
-    </style>
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="custom.css" />
   </head>
   <body>
     <div class="reveal">
